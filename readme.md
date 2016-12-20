@@ -4,7 +4,7 @@ This is a simple demo of an API written in Node.js, hosted in Azure Functions, a
 
 This is a basic implementation of a server that tracks the current version of systems (nodes) deployed in various locations. Clients regularly check in, and they're told if there is a newer version of their software available.
 
-This is only a sample of some of the concepts. Definitely not a complete solution by any means.
+This is only a sample of some of the concepts. Not a complete solution by any means.
 
 ## Required Reading
 
@@ -26,3 +26,21 @@ Initially, I used the DocumentDB native client, but it was a little more verbose
 ## Running Locally
 
 Running an Azure function locally is as easy as running `func run .\ListAllNodes\` where `ListAllNodes` is the name of your function.
+
+## Running in Azure
+
+It took me 60 seconds to deploy this to Azure. Simply create an Azure Function App in the portal. In my case I picked the "Consumption Plan" hosting plan option, because you're essentially paying for each request.
+
+After creating the function app, go to the app settings.
+
+![Function App Settings](readme-assets/Function_Settings@2x.png)
+
+In the Deploy section, click "Configure Continuous Integration".
+
+![Configure Continous Integration](readme-assets/Continous_Integration@2x.png)
+
+I configured mine to deploy from this GitHub repo. (instructions omitted)
+
+The last set was to configure the App Settings screen and set up the required application settings. Namely, the `dbUrl` parameter.
+
+![Application Settings](readme-assets/Application_Settings@2x.png)
