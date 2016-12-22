@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "azure-storage": "^1.4.0",
     "mongodb": "^2.2.16"
   }
 }
